@@ -1,0 +1,6 @@
+{
+  "name": "TikTok Growth Engine",
+  "description": "An organic growth analytics dashboard and content strategy planner for TikTok.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
