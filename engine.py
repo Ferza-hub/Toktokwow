@@ -15,8 +15,6 @@ except ImportError:
 class Bot:
 
     def __init__(self, service_choice, video_url):
-        system("cls || clear")
-
         self.service_choice = service_choice
         self.video_url = video_url
         
@@ -57,12 +55,15 @@ class Bot:
         try:
             print("[~] Loading driver, please wait...")
 
+            from selenium.webdriver.firefox.service import Service
             options = webdriver.FirefoxOptions()
+            options.binary_location = "/usr/bin/firefox"
             options.add_argument("--headless") # Added headless for server execution
             options.add_argument("--width=800")
             options.add_argument("--height=700")
 
-            driver = webdriver.Firefox(options=options)
+            service = Service(executable_path="/usr/local/bin/geckodriver")
+            driver = webdriver.Firefox(options=options, service=service)
             print("[+] Driver loaded successfully")
         except Exception as e:
             print("[x] Error loading driver: {}".format(e))
